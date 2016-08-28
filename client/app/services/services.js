@@ -7,19 +7,26 @@ angular.module('shortly.services', [])
       return $http({
         method: 'GET',
         url: '/api/links'
-      }).then(function(resp) {
+      })
+      .then(function(resp) {
         return resp.data;
       });
     },
     addOne: function(link) {
-      console.log('addone');
-      console.log(link);
       return $http({
         method: 'POST',
         url: '/api/links',
-        data: link
+        data: {url: link}
+      })
+      .then(function (resp) {
+        return resp;
       });
     }
+  };
+
+  return {
+    getAll: getAll,
+    addOne: addOne
   };
 
 })

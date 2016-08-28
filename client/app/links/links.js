@@ -14,7 +14,7 @@ links.factory('LinkFactory', function ($http) {
     getLinks: function() {
       return $http({
         method: 'GET',
-        url: 'https://api.github.com/z'
+        url: '/api/links'
       });
     }
   };
